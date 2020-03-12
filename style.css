@@ -22,3 +22,10 @@ body {
   max-width: 100%;
   width: 800px;
 }
+
+/* aside */
+aside {
+  padding: 10px 20px;
+  width: 250px;
+  border-right: 1px solid #111;
+}
