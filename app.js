@@ -13,7 +13,7 @@ getRandomUser();
 getRandomUser();
 getRandomUser();
 
-console.log(data);
+//console.log(data);
 
 //fetch random user and add money value
 async function getRandomUser() {
@@ -33,4 +33,28 @@ async function getRandomUser() {
 // Add newUser to data array
 function addData(obj) {
   data.push(obj);
+
+  // Call updateDOM function
+  updateDOM();
+}
+
+// Update the DOM
+function updateDOM(providedData = data) {
+  // Clear Main div
+  main.innerHTML = "<h2><strong>Person</strong> Wealth</h2>";
+
+  //loop through data array
+  providedData.forEach(item => {
+    // Create a div element
+    const element = document.createElement("div");
+
+    //   Add a class to the div element
+    element.classList.add("person");
+
+    // insert user data into the person div
+    element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
+
+    // add the new html to the DOM
+    main.appendChild(element);
+  });
 }
