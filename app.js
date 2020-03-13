@@ -65,3 +65,6 @@ function updateDOM(providedData = data) {
 function formatMoney(number) {
   return "€" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
+
+// Add EventListners
+addUserBtn.addEventListener("click", getRandomUser);
