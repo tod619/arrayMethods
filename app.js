@@ -61,6 +61,15 @@ function updateDOM(providedData = data) {
   });
 }
 
+// Double Money fubnction
+function doubleMoney() {
+  data = data.map(user => {
+    return { ...user, money: user.money * 2 };
+  });
+
+  updateDOM();
+}
+
 // Format number as money
 function formatMoney(number) {
   return "€" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
@@ -68,3 +77,4 @@ function formatMoney(number) {
 
 // Add EventListners
 addUserBtn.addEventListener("click", getRandomUser);
+doubleBtn.addEventListener("click", doubleMoney);
