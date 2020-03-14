@@ -70,6 +70,15 @@ function doubleMoney() {
   updateDOM();
 }
 
+// sort by richest function
+function sortByRichest() {
+  data.sort((a, b) => {
+    return b.money - a.money;
+  });
+
+  updateDOM();
+}
+
 // Format number as money
 function formatMoney(number) {
   return "€" + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
@@ -78,3 +87,4 @@ function formatMoney(number) {
 // Add EventListners
 addUserBtn.addEventListener("click", getRandomUser);
 doubleBtn.addEventListener("click", doubleMoney);
+sortBtn.addEventListener("click", sortByRichest);
